@@ -264,7 +264,6 @@ public class PokerTableController implements Initializable {
 	}
 
 	public void Handle_GameState(GamePlay HubPokerGame) {
-		// TODO: Deal the cards to the client(s)
 
 		GamePlay.StateOfGamePlay(HubPokerGame);
 
@@ -290,7 +289,7 @@ public class PokerTableController implements Initializable {
 			System.out.println(c.geteRank() + " " + c.geteSuit());
 		}
 
-		if (HubPokerGame.geteGameState() != eGameState.SCORED) {
+		/*if (HubPokerGame.geteGameState() != eGameState.SCORED) {
 			if (cd.getCardDestination() == eCardDestination.Player) {
 				Iterator it = HubPokerGame.getGamePlayers().entrySet().iterator();
 				while (it.hasNext()) {
@@ -318,16 +317,7 @@ public class PokerTableController implements Initializable {
 								System.out.println("x:" + bndCardDealt.getMinX());
 								System.out.println("y:" + bndCardDealt.getMinY());								
 							}
-							
-							
-							//ivDealtCard = (ImageView)this.getCardHBox(p.getiPlayerPosition()).getChildren().get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size() -1);
-							
-
-
-							
-							
-							
-							
+					
 						} else {
 							this.getCardHBox(p.getiPlayerPosition()).getChildren().add(BuildImage(0));
 							ivDealtCard = (ImageView)this.getCardHBox(p.getiPlayerPosition()).getChildren().get(this.getCardHBox(p.getiPlayerPosition()).getChildren().size() -1);							
@@ -357,10 +347,10 @@ public class PokerTableController implements Initializable {
 			HandScore hs = HubPokerGame.GetWinningHand().getHandScore();
 			lblWinningHand.setText(eHandStrength.geteHandStrength(hs.getHandStrength()).toString() + " "
 					+ eRank.geteRank(hs.getHiHand()).toString());
-		}
+		}*/
 	}
 
-	private ImageView BuildImage(int iCardNbr) {
+	/*private ImageView BuildImage(int iCardNbr) {
 		String strImgPath;
 		if (iCardNbr == 0) {
 			strImgPath = "/img/b2fv.png";
@@ -370,7 +360,7 @@ public class PokerTableController implements Initializable {
 
 		ImageView i1 = new ImageView(new Image(getClass().getResourceAsStream(strImgPath), 75, 75, true, true));
 		return i1;
-	}
+	}*/
 
 	@FXML
 	void btnStart_Click(ActionEvent event) {
@@ -437,7 +427,7 @@ public class PokerTableController implements Initializable {
 		}
 	}
 
-	private void FadeButton(Button btn) {
+/*	private void FadeButton(Button btn) {
 		FadeTransition ft = new FadeTransition(Duration.millis(3000), btn);
 		ft.setFromValue(1.0);
 		ft.setToValue(0.3);
@@ -445,6 +435,6 @@ public class PokerTableController implements Initializable {
 		ft.setAutoReverse(true);
 
 		ft.play();
-	}
+	}*/
 
 }
